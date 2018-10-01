@@ -13,3 +13,19 @@ Migramos nuestra tabla creada con:
     rake db:migrate
 Corremos denuevo el servidor y accedemos a http://localhost:3000/todo_lists/
     rails server
+En el archivo de rutas hacemos como raiz la accion index del controlador todo_lists
+    root "todo_lists#index"
+Y volvemos a correr el localhost
+Enseguida crearemos el modelo de los items o tareas que van dentro de la lista
+    rails g model todo_item content:string todo_list:references
+Migramos para rehacer los cambios en la base de datos
+    rake db:migrate
+En el modelo de TodoList agregamos la relacion hacia los todo item con esta linea
+    has_many :todo_items
+En el archivo de las rutas  agregamos el resources : todo_items
+    resources :todo_lists do
+        resources :todo_items
+    end
+Ejecutamos el comando rake routes y vemos las rutas que se generaron
+Creamos el controlador para los todo_items
+    rails generate controller todo_items
