@@ -1,0 +1,15 @@
+Creaamos la app
+    rails new ToDoApp
+Instalamos las gemas
+    bundle install
+Agregamos el proyecto al repositorio en github
+    https://github.com/jisrag/ToDoApp.git
+Corremos el servidor para ver que se haya creado correctamente nuestra app
+    rails server
+Detenemos con Ctrl+C
+Creamos con Scaffold nuestro Modelo, Vistas y Controladores para la tabla todo_list Muy util!
+    rails g scaffold todo_list title:string description:text
+Migramos nuestra tabla creada con:
+    rake db:migrate
+Corremos denuevo el servidor y accedemos a http://localhost:3000/todo_lists/
+    rails server
