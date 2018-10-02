@@ -16,10 +16,14 @@
       <tr>
         <td><%= todo_list.title %></td>
         <td><%= todo_list.description %></td>
-        <td><%= link_to 'Show', todo_list %></td>
-        <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
-        <td><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <tr>
+        <td><%= link_to 'Mostrar', todo_list %></td>
+        <td><%= link_to 'Editar', edit_todo_list_path(todo_list) %></td>
+        <td><%= link_to 'Eliminar', todo_list, method: :delete, data: { confirm: 'Estas seguro de borrar esta listaaaaa??????' } %></td>
+      </tr>
+      
+       
     <% end %>
   </tbody>
 </table>
