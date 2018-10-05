@@ -4,8 +4,10 @@ class TodoListsController < ApplicationController
   # GET /todo_lists
   # GET /todo_lists.json
   def index
-    @todo_lists = TodoList.all
-  end
+   @todo_lists = TodoList.all
+   #@todo_lists = TodoList.where(user_id: current_user.id)
+   #@todo_lists = current_user.list
+ end
 
   # GET /todo_lists/1
   # GET /todo_lists/1.json
@@ -25,6 +27,7 @@ class TodoListsController < ApplicationController
   # POST /todo_lists.json
   def create
     @todo_list = TodoList.new(todo_list_params)
+    @todo_list.user_id = current_user.id
 
     respond_to do |format|
       if @todo_list.save
