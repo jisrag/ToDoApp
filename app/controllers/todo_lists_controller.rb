@@ -5,14 +5,15 @@ class TodoListsController < ApplicationController
   # GET /todo_lists.json
   def index
     @user=current_user
-   #@todo_lists = TodoList.all
-   @todo_lists = @user.todo_lists
-   #@todo_lists = TodoList.where(user_id: :current_user.id)
-   #@todo_lists=current_user.todo_lists
-   #@todo_lists = current_user.list
-   #@todo_lists = curernt_user.todo_lists
+  
    
  end
+ 
+ def indexlists
+  @user=current_user
+  #@todo_lists = TodoList.all
+  @todo_lists = @user.todo_lists
+end
 
   # GET /todo_lists/1
   # GET /todo_lists/1.json
