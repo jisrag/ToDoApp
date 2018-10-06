@@ -4,14 +4,22 @@ class TodoListsController < ApplicationController
   # GET /todo_lists
   # GET /todo_lists.json
   def index
-   @todo_lists = TodoList.all
-   #@todo_lists = TodoList.where(user_id: current_user.id)
+    @user=current_user
+   #@todo_lists = TodoList.all
+   @todo_lists = @user.todo_lists
+   #@todo_lists = TodoList.where(user_id: :current_user.id)
+   #@todo_lists=current_user.todo_lists
    #@todo_lists = current_user.list
+   #@todo_lists = curernt_user.todo_lists
+   
  end
 
   # GET /todo_lists/1
   # GET /todo_lists/1.json
   def show
+    @user=current_user
+    @todo_lists = @user.todo_lists
+    #@todo_lists = curent_user.todo_lists
   end
 
   # GET /todo_lists/new
