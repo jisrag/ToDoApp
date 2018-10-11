@@ -1,5 +1,7 @@
-
-<div class="row clearfix">
+<div class="container">
+<div class="row">
+<div class="col-md-12" align="center">
+<!--<div class="row clearfix">-->
  <% if todo_item.completed? %>
 
   <div class="todo_item">
@@ -23,4 +25,7 @@
    <%= link_to "Delete", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "Are you sure?" } %>
   </div>
  <% end %>
+<!--</div>-->
+</div>
+</div>
 </div>

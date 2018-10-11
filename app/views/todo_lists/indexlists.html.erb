@@ -22,9 +22,9 @@
       El id es: <%=@user.id  %>
         <td><%= link_to 'Mostrar', todo_list %></td>
         <td><%= link_to 'Editar', edit_todo_list_path(todo_list) %></td>
-        <td><%= link_to 'Eliminar', todo_list, method: :delete, data: { confirm: 'Estas seguro de borrar esta listaaaaa??????' } %></td>
-        <td><%= link_to 'Regresar', todo_lists_path %></td>
-        <td><%= link_to 'Nueva Lista', new_todo_list_path %></td>
+     <td><%= link_to 'Eliminar', todo_list, method: :delete, data: { confirm: 'Estas seguro de borrar esta listaaaaa??????' } %></td>
+      <!--  <td><%= link_to 'Regresar', todo_lists_path %></td> -->
+      <!--  <td><%= link_to 'Nueva Lista', new_todo_list_path %></td> -->
       </tr>
       <%  end %>
        
@@ -32,6 +32,16 @@
   </tbody>
   
 </table>
+<%= link_to 'Regresar', todo_lists_path %>
+       <%= link_to 'Nueva Lista', new_todo_list_path %>
+       
+
+<p>
+  Download:
+  <%= link_to "CSV", todo_listas_path(format: "csv") %> 
+</p>
+
+
 </div>
 </div>
 </div>

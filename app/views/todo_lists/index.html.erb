@@ -10,6 +10,7 @@
 
 <br>
 <% if user_signed_in? %>
+    
     <%= link_to 'Mostrar mis listas', :action => :indexlists %>
     
     <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %>

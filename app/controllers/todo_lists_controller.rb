@@ -3,23 +3,33 @@ class TodoListsController < ApplicationController
 
   # GET /todo_lists
   # GET /todo_lists.json
-  def index
-    @user=current_user
   
-   
- end
+
  
  def indexlists
   @user=current_user
   #@todo_lists = TodoList.all
   @todo_lists = @user.todo_lists
+  respond_to do |format|
+    format.html
+    format.csv { send_data @todo_lists.to_csv }
+  end
+
 end
+
+
+
 
   # GET /todo_lists/1
   # GET /todo_lists/1.json
   def show
     @user=current_user
-    @todo_lists = @user.todo_lists
+    @todo_item = current_user.todo_lists
+    respond_to do |format|
+      format.html
+      format.csv { send_data @todo_list.todo_items.to_csv }
+    end
+    
     #@todo_lists = curent_user.todo_lists
   end
 

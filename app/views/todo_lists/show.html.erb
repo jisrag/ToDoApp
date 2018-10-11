@@ -1,5 +1,7 @@
-
 <div class="container">
+<div class="row">
+<div class="col-md-12" align="center">
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -23,5 +25,11 @@
 <%= link_to 'Editar', edit_todo_list_path(@todo_list) %> |
 <%= link_to 'Regresar', todo_listas_path %>|
 <%= link_to 'Eliminar', todo_list_path(@todo_list), method: :delete, data: { confirm: "Estas seguro de eliminar esta lista?" } %> |
+<p>
+  Download:
+  <%= link_to "CSV", todo_list_path(@todo_list ,format: "csv") %> 
+</p>
 
+</div>
+</div>
 </div>
