@@ -13,21 +13,37 @@ class TodoListsController < ApplicationController
   respond_to do |format|
     format.html
     format.csv { send_data @todo_lists.to_csv }
+    format.pdf do 
+      pdf = ListPdf.new(@user)
+      send_data pdf.render, filename: "Tus listas.pdf",
+                            type: "application/pdf",
+                            disposition: "inline"
+
+      
+    end
   end
 
+
+
 end
-
-
-
 
   # GET /todo_lists/1
   # GET /todo_lists/1.json
   def show
     @user=current_user
+    @todo_lists = @user.todo_lists
     @todo_item = current_user.todo_lists
     respond_to do |format|
       format.html
       format.csv { send_data @todo_list.todo_items.to_csv }
+      format.pdf do 
+        pdf = ItemPdf.new(@todo_list)
+        send_data pdf.render, filename: "Tus Tareas.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+  
+        
+      end
     end
     
     #@todo_lists = curent_user.todo_lists
