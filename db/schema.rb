@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181003220802) do
+ActiveRecord::Schema.define(version: 20181015163253) do
 
   create_table "todo_items", force: :cascade do |t|
     t.string "content"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20181003220802) do
     t.string "permission_level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "date_of_birth"
+    t.boolean "is_female", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

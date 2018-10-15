@@ -7,8 +7,10 @@ class ItemPdf < Prawn::Document
     end
 
     def list_data
-        text "Lista:    #{@list.title}    Descripcion:   #{@list.description}   , estas son tus tareas:"
-        text " Si esta en blanco aun no la completas jiji"
+        text "Lista:    #{@list.title} "
+        text " Descripcion:   #{@list.description} "
+        text " estas son tus tareas:"
+        text " Si esta en blanco aun no la completas."
         text " "
     end
     

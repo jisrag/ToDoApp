@@ -19,7 +19,7 @@
     <div class="navbar-nav">
     <% if user_signed_in? %>
       <a class="nav-item nav-link"><%= link_to 'Inicio', todo_lists_path %></a>
-     
+      <a class="nav-item nav-link"><%= link_to "Editar Contraseña", edit_user_registration_path %></a>
       <a class="nav-item nav-link"> <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %></a>
       <% else %>
       <a class="nav-item nav-link"><%= link_to 'Inicio', todo_lists_path %></a>
