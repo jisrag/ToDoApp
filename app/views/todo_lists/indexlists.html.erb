@@ -13,21 +13,25 @@
   <tbody>
   <% if user_signed_in? %>
     <% @todo_lists.each do |todo_list| %>
+  
       <tr>
         <td><%= todo_list.title %></td>
         <td><%= todo_list.description %></td>
       </tr>
       
       <tr>
-      El id es: <%=@user.id  %>
         <td><%= link_to 'Mostrar', todo_list %></td>
         <td><%= link_to 'Editar', edit_todo_list_path(todo_list) %></td>
      <td><%= link_to 'Eliminar', todo_list, method: :delete, data: { confirm: 'Estas seguro de borrar esta listaaaaa??????' } %></td>
       <!--  <td><%= link_to 'Regresar', todo_lists_path %></td> -->
       <!--  <td><%= link_to 'Nueva Lista', new_todo_list_path %></td> -->
       </tr>
+      <tr>
+      <td> </br> </br></td>
+      </tr>
+  
       <%  end %>
-       
+      
     <% end %>
   </tbody>
   
