@@ -63,9 +63,11 @@ end
   def create
     @todo_list = TodoList.new(todo_list_params)
     @todo_list.user_id = current_user.id
+    @user = current_user
 
     respond_to do |format|
       if @todo_list.save
+        WeeklyMailer.sample_email(@user).deliver
         format.html { redirect_to @todo_list, notice: 'Todo list was successfully created.' }
         format.json { render :show, status: :created, location: @todo_list }
       else
