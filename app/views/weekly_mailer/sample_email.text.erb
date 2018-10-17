@@ -1,2 +1,5 @@
 Hi <%= @user.name %>
-Sample mail sent using smtp.
+Estas son las listas que tienes pendientes
+<%= @user.todo_lists.each  do |lista| %>
+    <%= lista.title %>
+<% end %>

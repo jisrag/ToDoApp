@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+
 gem "cocaine", "= 0.5.5" 
 gem 'paperclip', '~> 5.2.0'
 gem 'prawn'

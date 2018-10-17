@@ -4,9 +4,20 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Hi <%= @user.name %></h1>
+    <h1>Hola <%= @user.name %></h1>
     <p>
-      Sample mail sent using smtp.
+      Estas son las listas que tienes pendientes
     </p>
+    <%= @user.todo_lists.map  do |lista| %>
+      <p>Titulo: <%= lista.title %></p>
+      Descripcion: <%=lista.description %>
+      <p>Tareas: </p>
+      <%= lista.todo_items.map  do |tarea| %>
+        tarea: <%= tarea.content %>
+        <br>
+      <% end %>
+      <br>
+      <br>
+    <% end %>
   </body>
 </html>
