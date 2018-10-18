@@ -8,11 +8,11 @@
     <p>
       Estas son las listas que tienes pendientes
     </p>
-    <%= @user.todo_lists.map  do |lista| %>
+    <% @user.todo_lists.map  do |lista| %>
       <p>Titulo: <%= lista.title %></p>
       Descripcion: <%=lista.description %>
       <p>Tareas: </p>
-      <%= lista.todo_items.map  do |tarea| %>
+      <% lista.todo_items.map  do |tarea| %>
         tarea: <%= tarea.content %>
         <br>
       <% end %>
