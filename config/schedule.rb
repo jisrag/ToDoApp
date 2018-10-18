@@ -1,4 +1,4 @@
-send_todo_list:
-  cron: "* * */7 * *"
-  class: "TodoListJob"
-queue: default
+send_reminder:
+  cron: " * * * * * "
+  class: "HardWorker"
+  queue: default

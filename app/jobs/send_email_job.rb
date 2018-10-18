@@ -3,8 +3,8 @@ class SendEmailJob < ApplicationJob
   
   def perform(user)
     @user = user
-    WeeklyMailer.sample_email(@user).deliver_later
-    SendEmailJob.perform_later(wait: 7.days).perform_later(@user)
+    WeeklyMailer.sample_email(@user).deliver
+    
     
   end
 

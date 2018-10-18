@@ -43,7 +43,7 @@ gem 'devise'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Capistrano for deployment
+# Use Capistrano for deploymentbundle exec rake jobs:work
 # gem 'capistrano-rails', group: :development
 gem 'redis'
 group :development, :test do

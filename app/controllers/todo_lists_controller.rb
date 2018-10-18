@@ -7,7 +7,9 @@ class TodoListsController < ApplicationController
 
  
  def indexlists
+  
   @user=current_user
+  HardWorker.perform_async()
   #@todo_lists = TodoList.all
   @todo_lists = @user.todo_lists
   respond_to do |format|
@@ -68,8 +70,9 @@ end
     respond_to do |format|
       if @todo_list.save
         #WeeklyMailer.sample_email(@user).deliver
-        SendEmailJob.set(wait: 1.seconds).perform_later(@user)
         #SendEmailJob.set(wait: 1.seconds).perform_later(@user)
+        #SendEmailJob.set(wait: 1.seconds).perform_later(@user)
+        
 
         format.html { redirect_to @todo_list, notice: 'Todo list was successfully created.' }
         format.json { render :show, status: :created, location: @todo_list }
