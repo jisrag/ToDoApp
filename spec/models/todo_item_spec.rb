@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe TodoItem, type: :model do
-   # Define User to be used in tests
+   # Define User to be used in the  tests
    let (:user) do
     user = User.new(
       email: 'someone@example.com',
@@ -11,20 +11,20 @@ RSpec.describe TodoItem, type: :model do
     user
 end
   
-  # Define List to be used in tests
+  # Define List to be used in the tests
   let (:list) do
     list = user.todo_lists.new(
       title: 'New list',
-      description: 'Amazing description'
+      description: 'Description'
     )
     list.save
     list
 end
 
-# Define List to be used in tests
+# Define Item to be used in the tests
 let (:item) do
   item = list.todo_items.new(
-    conten: 'New task',
+    conten: 'New item',
     done: false
   )
   item.save
@@ -35,7 +35,7 @@ end
 context 'validation test' do
   it 'ensures presence of content' do
     new_item = list.todo_items.new(
-      content: 'Amazing description'
+      content: 'Description'
     ).save
     expect(new_item).to eq(true)
   end
@@ -44,7 +44,7 @@ end
 context 'creation test' do
   it 'ensures that a item can be created' do
     new_item = list.todo_items.new(
-      content: 'Amazing description'
+      content: 'Description'
     ).save
     expect(new_item).to eq(true)
   end
