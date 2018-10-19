@@ -9,7 +9,7 @@ class TodoListsController < ApplicationController
  def indexlists
   
   @user=current_user
-  HardWorker.perform_async()
+  #HardWorker.perform_async()
   #@todo_lists = TodoList.all
   @todo_lists = @user.todo_lists
   respond_to do |format|
