@@ -1,4 +1,4 @@
 send_reminder:
-  cron: " * * * * * "
+cron: "* * */7 * *"
   class: "HardWorker"
   queue: default
